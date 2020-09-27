@@ -11,6 +11,11 @@ public class Controller : MonoBehaviour
     private float maxSpeed = 2;
 
     [SerializeField]
+    [Tooltip("How fast the player turns, it ranges from 0 to 1.")]
+    [Range(0,1)]
+    private float turnSpeed = 0.5f;
+
+    [SerializeField]
     private PhysicMaterial stopPhysicMaterial, movePhysicMaterial;
 
     private new Rigidbody rigidbody;
@@ -26,18 +31,23 @@ public class Controller : MonoBehaviour
     {
         var inputDirection = new Vector3(input.x, 0, input.y);
 
+        Vector3 flatCameraForward = Camera.main.transform.forward;
+        flatCameraForward.y = 0;
+        var cameraRotate = Quaternion.LookRotation(flatCameraForward);
+
+        Vector3 cameraReletiveInputDirection = cameraRotate * inputDirection;
+
         if (rigidbody.velocity.magnitude < maxSpeed)
         {
-            rigidbody.AddForce(inputDirection * accelerationForce, ForceMode.Acceleration);
+            rigidbody.AddForce(cameraReletiveInputDirection * accelerationForce, ForceMode.Acceleration);
         }
-        if (inputDirection.magnitude> 0)
+        if (cameraReletiveInputDirection.magnitude > 0)
         {
-            collider.material = movePhysicMaterial;
+            var targetRotate = Quaternion.LookRotation(cameraReletiveInputDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotate, turnSpeed);
+
         }
-        else
-        {
-            collider.material = stopPhysicMaterial;
-        }
+
     }
     void Update()
     {
