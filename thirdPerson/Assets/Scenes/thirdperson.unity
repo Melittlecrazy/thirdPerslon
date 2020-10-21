@@ -2262,6 +2262,7 @@ GameObject:
   - component: {fileID: 998766070}
   - component: {fileID: 998766069}
   - component: {fileID: 998766074}
+  - component: {fileID: 998766075}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2378,6 +2379,106 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &998766075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998766068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9b3388ec551070e438cbe33ef0181676,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 998766069}
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0b209d77-1e53-4a06-8a8c-4aa6d597673a
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/Performance
+      Designed Products Wired Fight Pad Pro for Nintendo Switch/stick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 23d41101-6d4e-40ab-bf18-3392cf18c912
+    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 06d5fea7-1aa0-4c00-abb3-038d593d3541
+    m_ActionName: Player/Fire[/Mouse/leftButton,/Performance Designed Products Wired
+      Fight Pad Pro for Nintendo Switch/trigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 07691ae6-2e06-4f80-a1ac-641e148ecd0d
+    m_ActionName: UI/Navigate[/Performance Designed Products Wired Fight Pad Pro
+      for Nintendo Switch/stick/up,/Performance Designed Products Wired Fight Pad
+      Pro for Nintendo Switch/stick/down,/Performance Designed Products Wired Fight
+      Pad Pro for Nintendo Switch/stick/left,/Performance Designed Products Wired
+      Fight Pad Pro for Nintendo Switch/stick/right,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7aef3e65-1f34-45b5-8a3a-a307e1858412
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac5af127-d8c1-4515-be69-68d0fb76e026
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 04c1838d-229a-4d17-afe3-2a9605204e30
+    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c9a4cb71-bdf2-4521-a30b-160805a3aa54
+    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 40615e6c-5e30-4dac-9687-ef5dad3a4588
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4b1c0f9a-a479-4eea-96cc-a3c29be4d87e
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12afc1a3-64e7-4368-994a-93825043cfa3
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1ff69305-e56b-4aae-9318-f48bfa0f793c
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c41657f-74d4-41a8-bfa7-fd0a53ba7ccb
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1062710041
 GameObject:
   m_ObjectHideFlags: 3
@@ -3143,7 +3244,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19752
+  m_Name: pb_Mesh14752
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
