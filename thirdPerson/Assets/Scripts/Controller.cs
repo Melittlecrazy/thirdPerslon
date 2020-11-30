@@ -22,10 +22,13 @@ public class Controller : MonoBehaviour
     private new Rigidbody rigidbody;
     private Vector2 input;
     private Collider collider;
+    private readonly int moveAnimPram = Animator.StringToHash("ToWalk");
+    private Animator animator;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -54,5 +57,6 @@ public class Controller : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         input = context.ReadValue<Vector2>();
+        animator.SetFloat(moveAnimPram, input.magnitude);
     }
 }
